@@ -1,0 +1,93 @@
+# LANGUAGE translation for pharaons_escape for the following files:
+# res://menu.tscn
+# res://opciones.tscn
+# res://extras.tscn
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pharaons_escape\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: menu.tscn
+msgid "Main Menu"
+msgstr "menu principal"
+
+#: menu.tscn
+msgid "Start"
+msgstr ""
+
+#: menu.tscn
+#: opciones.tscn
+msgid "Options"
+msgstr ""
+
+#: menu.tscn
+#: extras.tscn
+msgid "Extras"
+msgstr ""
+
+#: menu.tscn
+msgid "Exit"
+msgstr ""
+
+#: opciones.tscn
+msgid "Spanish"
+msgstr ""
+
+#: opciones.tscn
+msgid "English"
+msgstr ""
+
+#: opciones.tscn
+msgid "activate virtual controls"
+msgstr ""
+
+#: opciones.tscn
+#: extras.tscn
+msgid "Back"
+msgstr ""
+
+#: extras.tscn
+msgid "Other games"
+msgstr ""
+
+#: extras.tscn
+msgid "Game one - Castlevania"
+msgstr ""
+
+#: extras.tscn
+msgid "Game two - Zelda"
+msgstr ""
+
+#: extras.tscn
+msgid "game three - Metroid"
+msgstr ""
+
+#: extras.tscn
+msgid "game four - Hollow Knight"
+msgstr ""
+
+#: extras.tscn
+msgid "Text to change"
+msgstr ""
+
+msgid "legendary"
+msgstr ""
+
+msgid "new"
+msgstr ""
+
+#: extras.tscn
+msgid "Switch to \"Legendary Text\""
+msgstr ""
+
+#: extras.tscn
+msgid "Switch to \"Another new one\""
+msgstr ""
+
+

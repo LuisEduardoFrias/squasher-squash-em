@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://c8o08upd74j7d"]
+
+[ext_resource type="Script" uid="uid://clyaxtklc8pal" path="res://JoyStick/joystick.gd" id="1_jhikm"]
+[ext_resource type="Texture2D" uid="uid://dkykug2xs77bn" path="res://JoyStick/joystick-dpad.png" id="2_5hrse"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0pj48"]
+border_width_left = 100
+border_width_top = 100
+border_width_right = 100
+border_width_bottom = 100
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 126
+corner_radius_top_right = 126
+corner_radius_bottom_right = 126
+corner_radius_bottom_left = 126
+corner_detail = 20
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pj48"]
+atlas = ExtResource("2_5hrse")
+region = Rect2(512, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p3gj"]
+atlas = ExtResource("2_5hrse")
+region = Rect2(256, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hrse"]
+atlas = ExtResource("2_5hrse")
+region = Rect2(768, 512, 256, 256)
+
+[node name="joystick" type="Control" unique_id=227536269 groups=["joystick"]]
+modulate = Color(1, 1, 1, 0.4)
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+pivot_offset = Vector2(128, 126)
+mouse_filter = 1
+accessibility_name = "joystick"
+script = ExtResource("1_jhikm")
+joystick_dpad_texture = ExtResource("2_5hrse")
+metadata/_edit_lock_ = true
+
+[node name="panel" type="Panel" parent="." unique_id=1075731369]
+clip_children = 1
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 256.0
+pivot_offset = Vector2(128, 128)
+mouse_filter = 2
+accessibility_name = "."
+theme_override_styles/panel = SubResource("StyleBoxFlat_0pj48")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="panel" unique_id=1908857046]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+accessibility_name = "."
+color = Color(0.23921569, 0.29411766, 0.34509805, 1)
+metadata/_edit_lock_ = true
+
+[node name="handle" type="TextureRect" parent="panel" unique_id=1691710205]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(128, 128)
+mouse_filter = 2
+accessibility_name = "palanca joystick"
+texture = SubResource("AtlasTexture_0pj48")
+metadata/_edit_lock_ = true
+
+[node name="range" type="TextureRect" parent="panel" unique_id=1306074805]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(128, 128)
+mouse_filter = 2
+accessibility_name = "rango joystick"
+texture = SubResource("AtlasTexture_2p3gj")
+metadata/_edit_lock_ = true
+
+[node name="analog_stick_cover" type="TextureRect" parent="." unique_id=1695546024]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 256.0
+pivot_offset = Vector2(128, 128)
+mouse_filter = 2
+accessibility_name = "."
+texture = SubResource("AtlasTexture_5hrse")
+metadata/_edit_lock_ = true

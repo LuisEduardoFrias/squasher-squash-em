@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://den6xm23mhb7e"]
+
+[ext_resource type="Texture2D" uid="uid://c1sbuy7eqtois" path="res://addons/joy_stick/buttons.png" id="1_50pm2"]
+[ext_resource type="Script" uid="uid://bpt6mblitaaku" path="res://addons/joy_stick/toush_button.gd" id="1_yqktu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_luphe"]
+atlas = ExtResource("1_50pm2")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7nmu"]
+atlas = ExtResource("1_50pm2")
+region = Rect2(40, 0, 40, 40)
+
+[node name="ToushButton" type="TextureButton" unique_id=1505610672]
+offset_right = 40.0
+offset_bottom = 40.0
+focus_mode = 0
+mouse_filter = 1
+accessibility_name = "."
+texture_normal = SubResource("AtlasTexture_luphe")
+texture_pressed = SubResource("AtlasTexture_t7nmu")
+stretch_mode = 0
+script = ExtResource("1_yqktu")
+spritesheet = ExtResource("1_50pm2")
+normal_rect = Rect2i(0, 0, 40, 40)
+pressed_rect = Rect2i(40, 0, 40, 40)
+action = &""

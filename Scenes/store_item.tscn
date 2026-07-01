@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://by2am6uydv4rj"]
+
+[ext_resource type="Script" uid="uid://dqwcekxb87j4k" path="res://Scenes/store_item.gd" id="1_jui5u"]
+[ext_resource type="Texture2D" uid="uid://4nfp45eyf4yj" path="res://Textures/hub.png" id="1_xrmgs"]
+[ext_resource type="Texture2D" uid="uid://bnbdviycwqvdj" path="res://Textures/ítems y botones.png" id="2_jui5u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ooml"]
+atlas = ExtResource("1_xrmgs")
+region = Rect2(132, 54, 118, 117)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p20hg"]
+atlas = ExtResource("1_xrmgs")
+region = Rect2(168, 451, 36, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_he4j0"]
+atlas = ExtResource("2_jui5u")
+region = Rect2(0, 0, 63, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jui5u"]
+atlas = ExtResource("2_jui5u")
+region = Rect2(0, 16, 63, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl3yw"]
+atlas = ExtResource("2_jui5u")
+region = Rect2(0, 16, 63, 11)
+
+[node name="Panel" type="Panel" unique_id=1610814695]
+self_modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+custom_minimum_size = Vector2(220, 220)
+offset_right = 220.0
+offset_bottom = 220.0
+script = ExtResource("1_jui5u")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1768747635]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_2ooml")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="image" type="TextureRect" parent="." unique_id=1267737337]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 12.0
+offset_right = 79.0
+offset_bottom = 77.0
+texture = SubResource("AtlasTexture_p20hg")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="name" type="Label" parent="." unique_id=1645819273]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 12.0
+offset_right = 130.0
+offset_bottom = 35.0
+text = "name"
+metadata/_edit_lock_ = true
+
+[node name="coint_buy" type="Label" parent="." unique_id=530856530]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 59.0
+offset_right = 152.0
+offset_bottom = 82.0
+text = "0"
+metadata/_edit_lock_ = true
+
+[node name="resource_buy" type="Label" parent="." unique_id=1727625968]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 59.0
+offset_right = 213.0
+offset_bottom = 82.0
+text = "0"
+metadata/_edit_lock_ = true
+
+[node name="update" type="Label" parent="." unique_id=470950149]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 111.0
+offset_right = 128.0
+offset_bottom = 134.0
+text = "Update Skill"
+metadata/_edit_lock_ = true
+
+[node name="lv" type="Label" parent="." unique_id=1187040842]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 77.0
+offset_right = 72.0
+offset_bottom = 100.0
+text = "lv: 0"
+metadata/_edit_lock_ = true
+
+[node name="coint_update" type="Label" parent="." unique_id=1496418624]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 158.0
+offset_right = 153.0
+offset_bottom = 181.0
+text = "0"
+metadata/_edit_lock_ = true
+
+[node name="resource_update" type="Label" parent="." unique_id=367637068]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 158.0
+offset_right = 213.0
+offset_bottom = 181.0
+text = "0"
+metadata/_edit_lock_ = true
+
+[node name="btn_buy" type="TextureButton" parent="." unique_id=582548739]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 86.0
+offset_right = 205.0
+offset_bottom = 105.0
+texture_normal = SubResource("AtlasTexture_he4j0")
+texture_pressed = SubResource("AtlasTexture_jui5u")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="btn_buy" unique_id=691712476]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 13
+text = "Buy"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="btn_updaye" type="TextureButton" parent="." unique_id=1092570058]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 185.0
+offset_right = 205.0
+offset_bottom = 204.0
+texture_normal = SubResource("AtlasTexture_he4j0")
+texture_pressed = SubResource("AtlasTexture_rl3yw")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="btn_updaye" unique_id=1111455035]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 13
+text = "Update"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[connection signal="mouse_entered" from="btn_buy" to="." method="_on_btn_buy_mouse_entered"]
+[connection signal="mouse_exited" from="btn_buy" to="." method="_on_btn_buy_mouse_exited"]
+[connection signal="pressed" from="btn_buy" to="." method="_on_btn_buy_pressed"]
+[connection signal="mouse_entered" from="btn_updaye" to="." method="_on_btn_buy_mouse_entered"]
+[connection signal="mouse_exited" from="btn_updaye" to="." method="_on_btn_buy_mouse_exited"]
+[connection signal="pressed" from="btn_updaye" to="." method="_on_btn_updaye_pressed"]

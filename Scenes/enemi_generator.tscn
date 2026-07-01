@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://du221lnrj145e"]
+
+[ext_resource type="Script" uid="uid://c58xl5r2pyhqw" path="res://Scenes/enemi_generator.gd" id="1_v1q60"]
+
+[node name="enemi_generator" type="Node2D" unique_id=1146748551]
+script = ExtResource("1_v1q60")
+metadata/_edit_lock_ = true

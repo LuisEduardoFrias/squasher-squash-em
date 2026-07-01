@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cjoulbigfvn3a"]
+
+[ext_resource type="Script" uid="uid://ddeqk580geft4" path="res://Scenes/item.gd" id="1_ys0gr"]
+[ext_resource type="Texture2D" uid="uid://dep8vqla3yyfa" path="res://Textures/items.png" id="2_76mu4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u06aw"]
+atlas = ExtResource("2_76mu4")
+
+[node name="item" type="Node2D" unique_id=1028060968]
+script = ExtResource("1_ys0gr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=848655065]
+texture = SubResource("AtlasTexture_u06aw")

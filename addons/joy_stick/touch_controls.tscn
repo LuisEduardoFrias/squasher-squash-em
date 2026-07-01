@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://dmk7m8brrpvt5"]
+
+[ext_resource type="Script" uid="uid://bqnxflnlsbiwo" path="res://addons/joy_stick/touch_controls.gd" id="1_b1gxm"]
+[ext_resource type="PackedScene" uid="uid://c8o08upd74j7d" path="res://addons/joy_stick/joystick.tscn" id="2_420if"]
+[ext_resource type="PackedScene" uid="uid://den6xm23mhb7e" path="res://addons/joy_stick/toush_button.tscn" id="3_tg4w6"]
+[ext_resource type="Texture2D" uid="uid://c1sbuy7eqtois" path="res://addons/joy_stick/buttons.png" id="4_w7f30"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6vtx"]
+atlas = ExtResource("4_w7f30")
+region = Rect2(160, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkl2g"]
+atlas = ExtResource("4_w7f30")
+region = Rect2(280, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21kh3"]
+atlas = ExtResource("4_w7f30")
+region = Rect2(160, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0kct"]
+atlas = ExtResource("4_w7f30")
+region = Rect2(200, 40, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_riuus"]
+atlas = ExtResource("4_w7f30")
+region = Rect2(160, 80, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ib3o8"]
+atlas = ExtResource("4_w7f30")
+region = Rect2(200, 80, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dvc3"]
+atlas = ExtResource("4_w7f30")
+region = Rect2(160, 120, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4t5h4"]
+atlas = ExtResource("4_w7f30")
+region = Rect2(200, 120, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s12b1"]
+atlas = ExtResource("4_w7f30")
+region = Rect2(160, 320, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3wos"]
+atlas = ExtResource("4_w7f30")
+region = Rect2(200, 320, 40, 40)
+
+[node name="toush_controls" type="Control" unique_id=1139636888 groups=["controls_ui"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+accessibility_name = "."
+script = ExtResource("1_b1gxm")
+
+[node name="hbox_container" type="HBoxContainer" parent="." unique_id=917613205]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+accessibility_name = "."
+metadata/_edit_lock_ = true
+
+[node name="left" type="Panel" parent="hbox_container" unique_id=1819434029]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+accessibility_name = "."
+metadata/_edit_lock_ = true
+
+[node name="JoyStick" parent="hbox_container/left" unique_id=379831481 instance=ExtResource("2_420if")]
+modulate = Color(1, 1, 1, 0.5)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -306.0
+offset_right = 356.0
+offset_bottom = -50.0
+grow_vertical = 0
+use_threshold = true
+dpad_vibration = true
+idle_opacity = 0.5
+is_dpad_mode = true
+
+[node name="right" type="Panel" parent="hbox_container" unique_id=1327423901]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+accessibility_name = "."
+metadata/_edit_lock_ = true
+
+[node name="ToushButton1" parent="hbox_container/right" unique_id=1505610672 instance=ExtResource("3_tg4w6")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -470.0
+offset_top = -168.0
+offset_right = -350.0
+offset_bottom = -48.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_q6vtx")
+texture_pressed = SubResource("AtlasTexture_vkl2g")
+normal_rect = Rect2i(160, 0, 40, 40)
+pressed_rect = Rect2i(280, 0, 40, 40)
+action = &"ui_action_1"
+metadata/_edit_lock_ = true
+
+[node name="ToushButton2" parent="hbox_container/right" unique_id=1459485761 instance=ExtResource("3_tg4w6")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -285.0
+offset_top = -168.0
+offset_right = -165.0
+offset_bottom = -48.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_21kh3")
+texture_pressed = SubResource("AtlasTexture_f0kct")
+normal_rect = Rect2i(160, 40, 40, 40)
+pressed_rect = Rect2i(200, 40, 40, 40)
+action = &"ui_action_2"
+metadata/_edit_lock_ = true
+
+[node name="ToushButton3" parent="hbox_container/right" unique_id=1197541381 instance=ExtResource("3_tg4w6")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -360.0
+offset_top = -328.0
+offset_right = -240.0
+offset_bottom = -208.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_riuus")
+texture_pressed = SubResource("AtlasTexture_ib3o8")
+normal_rect = Rect2i(160, 80, 40, 40)
+pressed_rect = Rect2i(200, 80, 40, 40)
+action = &"ui_action_3"
+metadata/_edit_lock_ = true
+
+[node name="ToushButton4" parent="hbox_container/right" unique_id=1764462579 instance=ExtResource("3_tg4w6")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -180.0
+offset_top = -328.0
+offset_right = -60.0
+offset_bottom = -208.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_6dvc3")
+texture_pressed = SubResource("AtlasTexture_4t5h4")
+normal_rect = Rect2i(160, 120, 40, 40)
+pressed_rect = Rect2i(200, 120, 40, 40)
+action = &"ui_action_4"
+metadata/_edit_lock_ = true
+
+[node name="ToushButton5" parent="hbox_container/right" unique_id=916981111 instance=ExtResource("3_tg4w6")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -498.0
+offset_right = -30.0
+offset_bottom = -378.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_s12b1")
+texture_pressed = SubResource("AtlasTexture_j3wos")
+normal_rect = Rect2i(160, 320, 40, 40)
+pressed_rect = Rect2i(200, 320, 40, 40)
+action = &"ui_pause"
+metadata/_edit_lock_ = true

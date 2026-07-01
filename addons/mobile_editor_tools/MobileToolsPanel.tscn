@@ -1,0 +1,284 @@
+[gd_scene load_steps=14 format=3 uid="uid://c4xwh8jbe7218"]
+
+[ext_resource type="Texture2D" uid="uid://brqjhhu30yw6x" path="res://Addons/mobile_editor_tools/texture/tab.png" id="2_wg165"]
+[ext_resource type="Texture2D" uid="uid://bf1xgk1v68v32" path="res://Addons/mobile_editor_tools/texture/top.png" id="3_45c3x"]
+[ext_resource type="Texture2D" uid="uid://c8heqyi8j5768" path="res://Addons/mobile_editor_tools/texture/buttom.png" id="4_40sfg"]
+[ext_resource type="Texture2D" uid="uid://bmpc7ibxtlljr" path="res://Addons/mobile_editor_tools/texture/left.png" id="5_juyvy"]
+[ext_resource type="Texture2D" uid="uid://cbcm0lminj6ou" path="res://Addons/mobile_editor_tools/texture/right.png" id="6_fjkkn"]
+[ext_resource type="Texture2D" uid="uid://dpajgnw0dgvro" path="res://Addons/mobile_editor_tools/texture/teclado.png" id="6_yv8el"]
+[ext_resource type="Texture2D" uid="uid://b4lq1u8i0tr2i" path="res://Addons/mobile_editor_tools/texture/pressed.png" id="7_xmkyw"]
+[ext_resource type="Texture2D" uid="uid://d4iqgqahn1r60" path="res://Addons/mobile_editor_tools/texture/control.png" id="8_p4y2w"]
+[ext_resource type="Texture2D" uid="uid://b0mg40a4awtma" path="res://Addons/mobile_editor_tools/texture/copy.png" id="9_2ccpa"]
+[ext_resource type="Texture2D" uid="uid://b6n83ootourcl" path="res://Addons/mobile_editor_tools/texture/paste.png" id="10_cy2m5"]
+[ext_resource type="Texture2D" uid="uid://bg3kth5rd54m7" path="res://Addons/mobile_editor_tools/texture/coment.png" id="11_jtsam"]
+[ext_resource type="Texture2D" uid="uid://dyvpynp5pnpcb" path="res://Addons/mobile_editor_tools/texture/move.png" id="12_cy2m5"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_p4y2w"]
+
+[node name="mobile_editor_tools" type="Control"]
+custom_minimum_size = Vector2(444, 120)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.26666668, 0.26666668, 0.41568628)
+metadata/_edit_lock_ = true
+
+[node name="HScrollBar" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxLine_p4y2w")
+follow_focus = true
+scroll_horizontal = 100
+vertical_scroll_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HScrollBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="HScrollBar/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="HScrollBar/HBoxContainer/MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Button_Tab" type="TextureButton" parent="HScrollBar/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+texture_normal = ExtResource("2_wg165")
+texture_pressed = ExtResource("7_xmkyw")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="HScrollBar/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="HScrollBar/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Button_Up" type="TextureButton" parent="HScrollBar/HBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+texture_normal = ExtResource("3_45c3x")
+texture_pressed = ExtResource("7_xmkyw")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="HScrollBar/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="HScrollBar/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Button_Down" type="TextureButton" parent="HScrollBar/HBoxContainer/MarginContainer3"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+texture_normal = ExtResource("4_40sfg")
+texture_pressed = ExtResource("7_xmkyw")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="HScrollBar/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="HScrollBar/HBoxContainer/MarginContainer4"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Button_Left" type="TextureButton" parent="HScrollBar/HBoxContainer/MarginContainer4"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+texture_normal = ExtResource("5_juyvy")
+texture_pressed = ExtResource("7_xmkyw")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="HScrollBar/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="HScrollBar/HBoxContainer/MarginContainer5"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Button_Right" type="TextureButton" parent="HScrollBar/HBoxContainer/MarginContainer5"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+texture_normal = ExtResource("6_fjkkn")
+texture_pressed = ExtResource("7_xmkyw")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="MarginContainer6" type="MarginContainer" parent="HScrollBar/HBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="HScrollBar/HBoxContainer/MarginContainer6"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Button_teclado" type="TextureButton" parent="HScrollBar/HBoxContainer/MarginContainer6"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+texture_normal = ExtResource("6_yv8el")
+texture_pressed = ExtResource("7_xmkyw")
+stretch_mode = 0
+
+[node name="MarginContainer7" type="MarginContainer" parent="HScrollBar/HBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="HScrollBar/HBoxContainer/MarginContainer7"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Button_control" type="TextureButton" parent="HScrollBar/HBoxContainer/MarginContainer7"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+texture_normal = ExtResource("8_p4y2w")
+texture_pressed = ExtResource("7_xmkyw")
+stretch_mode = 0
+
+[node name="MarginContainer8" type="MarginContainer" parent="HScrollBar/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="HScrollBar/HBoxContainer/MarginContainer8"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="copy" type="TextureButton" parent="HScrollBar/HBoxContainer/MarginContainer8"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+texture_normal = ExtResource("9_2ccpa")
+texture_pressed = ExtResource("7_xmkyw")
+stretch_mode = 0
+
+[node name="MarginContainer9" type="MarginContainer" parent="HScrollBar/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="HScrollBar/HBoxContainer/MarginContainer9"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="paste" type="TextureButton" parent="HScrollBar/HBoxContainer/MarginContainer9"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+texture_normal = ExtResource("10_cy2m5")
+texture_pressed = ExtResource("7_xmkyw")
+stretch_mode = 0
+
+[node name="MarginContainer10" type="MarginContainer" parent="HScrollBar/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="HScrollBar/HBoxContainer/MarginContainer10"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="coment" type="TextureButton" parent="HScrollBar/HBoxContainer/MarginContainer10"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+texture_normal = ExtResource("11_jtsam")
+texture_pressed = ExtResource("7_xmkyw")
+stretch_mode = 0
+
+[node name="MarginContainer11" type="MarginContainer" parent="HScrollBar/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="HScrollBar/HBoxContainer/MarginContainer11"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="move" type="TextureButton" parent="HScrollBar/HBoxContainer/MarginContainer11"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+texture_normal = ExtResource("12_cy2m5")
+texture_pressed = ExtResource("7_xmkyw")
+stretch_mode = 0

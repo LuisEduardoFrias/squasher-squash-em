@@ -1,0 +1,49 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Squasher, Squash 'Em!"
+run/main_scene="uid://8e2f0x1dyg7n"
+config/features=PackedStringArray("4.6", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Mouse="*uid://cpi4y4ouq4xcr"
+Global="*uid://cmeic4k2j5j5m"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/mode=2
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/mobile_editor_tools/plugin.cfg")
+
+[layer_names]
+
+2d_physics/layer_1="wall"
+2d_physics/layer_2="coins"
+2d_physics/layer_3="enemic"
+2d_physics/layer_4="mouse"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"

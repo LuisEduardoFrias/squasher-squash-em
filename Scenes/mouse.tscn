@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://cpi4y4ouq4xcr"]
+
+[ext_resource type="Script" uid="uid://crffnrfedkpwe" path="res://Scenes/mouse.gd" id="1_3ber4"]
+[ext_resource type="Texture2D" uid="uid://cqid3mpyfkqoo" path="res://Textures/manos.png" id="2_3ber4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ber4"]
+radius = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxv04"]
+atlas = ExtResource("2_3ber4")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="Animation" id="Animation_2q34x"]
+length = 0.001
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 64, 80)]
+}
+
+[sub_resource type="Animation" id="Animation_3ber4"]
+resource_name = "aga"
+loop_mode = 1
+step = 0.14285715
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(64, 80, 64, 80)]
+}
+
+[sub_resource type="Animation" id="Animation_uwmpi"]
+resource_name = "ok"
+step = 0.14285715
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(64, 0, 64, 80)]
+}
+
+[sub_resource type="Animation" id="Animation_kxv04"]
+resource_name = "pull"
+loop_mode = 1
+step = 0.14285715
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 160, 64, 80)]
+}
+
+[sub_resource type="Animation" id="Animation_ffywo"]
+resource_name = "puñ"
+step = 0.14285715
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(64, 160, 64, 80)]
+}
+
+[sub_resource type="Animation" id="Animation_5rgqy"]
+resource_name = "señ"
+loop_mode = 1
+step = 0.14285715
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 80, 64, 80)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5rgqy"]
+_data = {
+&"RESET": SubResource("Animation_2q34x"),
+&"aga": SubResource("Animation_3ber4"),
+&"ok": SubResource("Animation_uwmpi"),
+&"pull": SubResource("Animation_kxv04"),
+&"puñ": SubResource("Animation_ffywo"),
+&"señ": SubResource("Animation_5rgqy")
+}
+
+[node name="mouse" type="CanvasLayer" unique_id=939941359]
+layer = 100
+script = ExtResource("1_3ber4")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1088404519]
+position = Vector2(616, 336)
+collision_layer = 8
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=796785054]
+z_index = 1
+shape = SubResource("CircleShape2D_3ber4")
+debug_color = Color(1, 0, 1, 0.5647059)
+metadata/_edit_lock_ = true
+
+[node name="icon" type="TextureRect" parent="Area2D" unique_id=242901207]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(20, 20)
+mouse_filter = 2
+accessibility_name = "."
+texture = SubResource("AtlasTexture_kxv04")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D/icon" unique_id=425650171]
+libraries/ = SubResource("AnimationLibrary_5rgqy")

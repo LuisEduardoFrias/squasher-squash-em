@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dxo5h6wynf1il"]
+
+[ext_resource type="PackedScene" uid="uid://cjoulbigfvn3a" path="res://Scenes/item.tscn" id="1_3utp6"]
+[ext_resource type="Texture2D" uid="uid://dep8vqla3yyfa" path="res://Textures/items.png" id="2_8cnrf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptdby"]
+atlas = ExtResource("2_8cnrf")
+region = Rect2(48, 0, 16, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3utp6"]
+size = Vector2(11, 48)
+
+[node name="item" unique_id=1028060968 instance=ExtResource("1_3utp6")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=848655065]
+texture_filter = 1
+texture = SubResource("AtlasTexture_ptdby")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" index="0" unique_id=345876133]
+collision_mask = 4
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" index="0" unique_id=294937205]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_3utp6")
+metadata/_edit_lock_ = true

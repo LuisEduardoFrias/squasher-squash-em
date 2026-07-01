@@ -1,0 +1,275 @@
+[gd_scene format=3 uid="uid://ksmdekoe78rv"]
+
+[ext_resource type="Script" uid="uid://cqu8egrnpikhu" path="res://Scenes/Enemies/enemic_base.gd" id="1_l3itg"]
+[ext_resource type="Texture2D" uid="uid://3d03jvh6tgx6" path="res://Textures/enemics.png" id="2_l3itg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ci6au"]
+size = Vector2(13, 28.5)
+
+[sub_resource type="Animation" id="Animation_ci6au"]
+length = 1.0001
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_w6v0b"]
+resource_name = "enemic_1_attack"
+length = 0.5
+loop_mode = 1
+step = 0.4
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(64, 0, 0, 0.06666667, 0.16666667, 65, -0.06666667, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.4)
+}
+
+[sub_resource type="Animation" id="Animation_l3itg"]
+resource_name = "enemic_1_dead"
+length = 0.4
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2, 2),
+"points": PackedFloat32Array(32, -0.2, 0, 0.2, 0, 33, -0.016666668, -0.16666667, 0, 0, 34, -0.016666668, -0.16666667, 0, 0, 35, -0.01666667, -0.16666667, 0, 0, 36, -0.016666666, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4)
+}
+
+[sub_resource type="Animation" id="Animation_26yhd"]
+resource_name = "enemic_1_move"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2, 2),
+"points": PackedFloat32Array(0, 0, 0, 0.041666668, 0.16666667, 1, -0.041666668, -0.16666667, 0.041666668, 0.16666667, 2, -0.041666668, -0.16666667, 0.041666668, 0.16666667, 3, -0.041666668, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75)
+}
+
+[sub_resource type="Animation" id="Animation_vxxp5"]
+resource_name = "enemic_2_attack"
+length = 0.50005
+loop_mode = 1
+step = 0.4
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(160, -0.25, 0, 0.25, 0, 161, -0.06666667, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.4)
+}
+
+[sub_resource type="Animation" id="Animation_cq0fu"]
+resource_name = "enemic_2_dead"
+length = 0.40002
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2, 2),
+"points": PackedFloat32Array(128, -0.20001, 0, 0.20001, 0, 129, -0.016666668, -0.16666667, 0, 0, 130, -0.016666668, -0.16666667, 0, 0, 131, -0.01666667, -0.16666667, 0, 0, 132, -0.016666666, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4)
+}
+
+[sub_resource type="Animation" id="Animation_p3ir5"]
+resource_name = "enemic_2_move"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2),
+"points": PackedFloat32Array(96, -0.25, 0, 0.25, 0, 97, -0.041666668, -0.16666667, 0, 0, 98, -0.041666668, -0.16666667, 0, 0, 99, -0.041666668, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75)
+}
+
+[sub_resource type="Animation" id="Animation_78sn1"]
+resource_name = "enemic_3_attack"
+length = 0.50005
+loop_mode = 1
+step = 0.4
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(165, -0.25, 0, 0.25, 0, 166, -0.06666667, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.4)
+}
+
+[sub_resource type="Animation" id="Animation_04j0a"]
+resource_name = "enemic_3_dead"
+length = 0.40002
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2, 2, 2),
+"points": PackedFloat32Array(133, 0, 0, 0.016666668, 0.16666667, 134, -0.016666668, -0.16666667, 0.016666668, 0.16666667, 135, -0.016666668, -0.16666666, 0.01666667, 0.16666667, 136, -0.01666667, -0.16666669, 0.016666666, 0.16666666, 137, -0.016666666, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4)
+}
+
+[sub_resource type="Animation" id="Animation_kibip"]
+resource_name = "enemic_3_move"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2),
+"points": PackedFloat32Array(101, -0.25, 0, 0.25, 0, 102, -0.041666668, -0.16666667, 0, 0, 103, -0.041666668, -0.16666667, 0, 0, 104, -0.041666668, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75)
+}
+
+[sub_resource type="Animation" id="Animation_ebnxu"]
+resource_name = "enemic_4_attack"
+length = 0.50005
+loop_mode = 1
+step = 0.4
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(69, -0.25, 0, 0.25, 0, 70, -0.06666667, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.4)
+}
+
+[sub_resource type="Animation" id="Animation_js7pl"]
+resource_name = "enemic_4_dead"
+length = 0.40002
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2, 2),
+"points": PackedFloat32Array(37, -0.20001, 0, 0.20001, 0, 38, -0.016666668, -0.16666667, 0, 0, 39, -0.016666668, -0.16666667, 0, 0, 40, -0.01666667, -0.16666667, 0, 0, 41, -0.016666666, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4)
+}
+
+[sub_resource type="Animation" id="Animation_idwae"]
+resource_name = "enemic_4_move"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 2),
+"points": PackedFloat32Array(5, -0.25, 0, 0.25, 0, 6, -0.041666668, -0.16666667, 0, 0, 7, -0.041666668, -0.16666667, 0, 0, 8, -0.041666668, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p3ir5"]
+_data = {
+&"RESET": SubResource("Animation_ci6au"),
+&"enemic_1_attack": SubResource("Animation_w6v0b"),
+&"enemic_1_dead": SubResource("Animation_l3itg"),
+&"enemic_1_move": SubResource("Animation_26yhd"),
+&"enemic_2_attack": SubResource("Animation_vxxp5"),
+&"enemic_2_dead": SubResource("Animation_cq0fu"),
+&"enemic_2_move": SubResource("Animation_p3ir5"),
+&"enemic_3_attack": SubResource("Animation_78sn1"),
+&"enemic_3_dead": SubResource("Animation_04j0a"),
+&"enemic_3_move": SubResource("Animation_kibip"),
+&"enemic_4_attack": SubResource("Animation_ebnxu"),
+&"enemic_4_dead": SubResource("Animation_js7pl"),
+&"enemic_4_move": SubResource("Animation_idwae")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3ir5"]
+size = Vector2(16, 28)
+
+[node name="enemic_base" type="CharacterBody2D" unique_id=315912967]
+texture_filter = 1
+collision_layer = 4
+motion_mode = 1
+script = ExtResource("1_l3itg")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=867703496]
+position = Vector2(0, 0.25)
+shape = SubResource("RectangleShape2D_ci6au")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1663739328]
+texture = ExtResource("2_l3itg")
+hframes = 32
+vframes = 16
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1991800566]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_p3ir5")
+
+[node name="hit" type="Area2D" parent="." unique_id=1729780967]
+position = Vector2(-1, 0)
+collision_layer = 0
+input_pickable = false
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit" unique_id=321590693]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_p3ir5")
+debug_color = Color(0.45257473, 0.5954905, 5.7756904e-07, 0.42)
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="hit" to="." method="_on_hit_body_entered"]

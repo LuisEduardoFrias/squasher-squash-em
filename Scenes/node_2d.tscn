@@ -1,0 +1,337 @@
+[gd_scene format=3 uid="uid://8e2f0x1dyg7n"]
+
+[ext_resource type="PackedScene" uid="uid://b1hpl3juxcjm8" path="res://Scenes/map.tscn" id="1_j2wod"]
+[ext_resource type="Script" uid="uid://be5ic2dmhy3jl" path="res://Scenes/node_2d.gd" id="1_v1qfn"]
+[ext_resource type="Texture2D" uid="uid://bnbdviycwqvdj" path="res://Textures/ítems y botones.png" id="3_6whob"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx0tn"]
+atlas = ExtResource("3_6whob")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hh5uf"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 0.4)
+skew = Vector2(0.5, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6whob"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.76862746, 0, 0, 1)
+skew = Vector2(0.5, 0)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjtap"]
+atlas = ExtResource("3_6whob")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7krg"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 0.4)
+skew = Vector2(0.5, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tx0tn"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 1, 1, 1)
+skew = Vector2(0.5, 0)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7gqg"]
+atlas = ExtResource("3_6whob")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chwn1"]
+atlas = ExtResource("3_6whob")
+region = Rect2(48, 32, 32, 16)
+
+[node name="Node2D" type="Node2D" unique_id=2126232472]
+script = ExtResource("1_v1qfn")
+metadata/_edit_lock_ = true
+metadata/_edit_vertical_guides_ = [-79.0]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1907354405]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=155655047]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+accessibility_name = "."
+stretch = true
+stretch_shrink = 2
+mouse_target = true
+metadata/_edit_lock_ = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=1660116302]
+unique_name_in_owner = true
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+snap_2d_vertices_to_pixel = true
+canvas_item_default_texture_filter = 0
+audio_listener_enable_2d = true
+physics_object_picking = true
+size = Vector2i(640, 360)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Node2D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1259802523 instance=ExtResource("1_j2wod")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1095507362]
+
+[node name="Panel" type="Panel" parent="CanvasLayer2" unique_id=1792628514]
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -950.0
+offset_bottom = 90.0
+grow_horizontal = 0
+mouse_filter = 2
+accessibility_name = "."
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2/Panel" unique_id=1529975231]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
+accessibility_name = "."
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="CanvasLayer2/Panel/MarginContainer" unique_id=1057736165]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+mouse_filter = 2
+accessibility_name = "."
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2/Panel/MarginContainer/Panel" unique_id=978602107]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+accessibility_name = "."
+theme_override_constants/separation = 15
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2/Panel/MarginContainer/Panel/HBoxContainer" unique_id=756903873]
+layout_mode = 2
+mouse_filter = 2
+accessibility_name = "."
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2/Panel/MarginContainer/Panel/HBoxContainer/HBoxContainer" unique_id=1514953871]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_tx0tn")
+expand_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="CanvasLayer2/Panel/MarginContainer/Panel/HBoxContainer/HBoxContainer" unique_id=2060855094]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_edit_lock_ = true
+
+[node name="live" type="ProgressBar" parent="CanvasLayer2/Panel/MarginContainer/Panel/HBoxContainer/HBoxContainer/Panel" unique_id=888667386]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+mouse_filter = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_hh5uf")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6whob")
+max_value = 500.0
+step = 1.0
+value = 500.0
+show_percentage = false
+metadata/_edit_lock_ = true
+
+[node name="l_live" type="Label" parent="CanvasLayer2/Panel/MarginContainer/Panel/HBoxContainer/HBoxContainer/Panel" unique_id=1993271652]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 29
+text = "LIVE: 100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer2/Panel/MarginContainer/Panel/HBoxContainer" unique_id=296782981]
+layout_mode = 2
+mouse_filter = 2
+accessibility_name = "."
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2/Panel/MarginContainer/Panel/HBoxContainer/HBoxContainer2" unique_id=168960683]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+accessibility_name = "."
+texture = SubResource("AtlasTexture_wjtap")
+expand_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="CanvasLayer2/Panel/MarginContainer/Panel/HBoxContainer/HBoxContainer2" unique_id=50725770]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+accessibility_name = "."
+metadata/_edit_lock_ = true
+
+[node name="exp" type="ProgressBar" parent="CanvasLayer2/Panel/MarginContainer/Panel/HBoxContainer/HBoxContainer2/Panel" unique_id=160973430]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+mouse_filter = 2
+accessibility_name = "."
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_u7krg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_tx0tn")
+step = 1.0
+show_percentage = false
+metadata/_edit_lock_ = true
+
+[node name="l_exp" type="Label" parent="CanvasLayer2/Panel/MarginContainer/Panel/HBoxContainer/HBoxContainer2/Panel" unique_id=2032882378]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+accessibility_name = "."
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 29
+text = "EXP: 100%"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer2/Panel/MarginContainer/Panel/HBoxContainer" unique_id=462984209]
+layout_mode = 2
+mouse_filter = 2
+accessibility_name = "."
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2/Panel/MarginContainer/Panel/HBoxContainer/HBoxContainer3" unique_id=1212926448]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+accessibility_name = "."
+texture = SubResource("AtlasTexture_v7gqg")
+expand_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="coins" type="Label" parent="CanvasLayer2/Panel/MarginContainer/Panel/HBoxContainer/HBoxContainer3" unique_id=82837998]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+accessibility_name = "."
+theme_override_colors/font_color = Color(1, 0.8745098, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "1000000"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer2/Panel/MarginContainer/Panel/HBoxContainer" unique_id=1714885368]
+layout_mode = 2
+mouse_filter = 2
+accessibility_name = "."
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2/Panel/MarginContainer/Panel/HBoxContainer/HBoxContainer4" unique_id=244739259]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+accessibility_name = "."
+texture = SubResource("AtlasTexture_chwn1")
+expand_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="resours" type="Label" parent="CanvasLayer2/Panel/MarginContainer/Panel/HBoxContainer/HBoxContainer4" unique_id=1924805158]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+accessibility_name = "."
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
