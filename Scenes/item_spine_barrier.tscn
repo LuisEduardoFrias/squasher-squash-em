@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://l26vmw83cfa7"]
+
+[ext_resource type="PackedScene" uid="uid://cjoulbigfvn3a" path="res://Scenes/item.tscn" id="1_p3p7s"]
+[ext_resource type="Texture2D" uid="uid://dep8vqla3yyfa" path="res://Textures/items.png" id="2_lak8q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lak8q"]
+size = Vector2(10, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq6um"]
+atlas = ExtResource("2_lak8q")
+region = Rect2(32, 0, 16, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r60n8"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq6um")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"destroyed",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jq6um"]
+size = Vector2(11.75, 37)
+
+[node name="item_spine barrier" unique_id=934773547 instance=ExtResource("1_p3p7s")]
+max_live = 150.0
+live = 150.0
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=664725684]
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_lak8q")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=362280601]
+sprite_frames = SubResource("SpriteFrames_r60n8")
+animation = &"default"
+
+[node name="ProgressBar" parent="." index="3" unique_id=1514794177]
+offset_left = -25.0
+offset_right = 25.0
+
+[node name="CollisionShape2D" parent="hit" parent_id_path=PackedInt32Array(2017249764) index="0" unique_id=1119925536]
+position = Vector2(5.125, -0.5)
+shape = SubResource("RectangleShape2D_jq6um")
+
+[connection signal="body_exited" from="hit" to="." method="_on_hit_body_exited"]

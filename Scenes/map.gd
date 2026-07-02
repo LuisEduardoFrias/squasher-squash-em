@@ -8,15 +8,33 @@ extends Node2D
 @export var store_item: PackedScene
 @export var skills_item: PackedScene
 
+@onready var l_level: Label = %label_level
+@onready var l_level2: Label = %label_level2
+@onready var l_ph: Label = %label_ph
+@onready var l_ph2: Label = %label_ph2
+
 var shape: Shape2D
 
 
 func _ready() -> void:
+	l_level.text = str(Global.player_level)
+	l_level2.text = str(Global.player_level)
+	l_ph.text = str(Global.player_ph)
+	l_ph2.text = str(Global.player_ph)
+
 	hidden_menu(0)
 	_show_store_item()
 
 
+func _process(_delta: float) -> void:
+	l_level.text = str(Global.player_level)
+	l_level2.text = str(Global.player_level)
+	l_ph.text = str(Global.player_ph)
+	l_ph2.text = str(Global.player_ph)
+
+
 func _input(event: InputEvent) -> void:
+	print("map: ", event)
 	if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.pressed:
 		var rect_size = col.shape.size
 		var zona_interactiva = Rect2(col.global_position - rect_size / 2, rect_size)
@@ -45,7 +63,9 @@ func _show_store_item() -> void:
 		sti.item_coin_update = i.coins_required
 		sti.item_resource_update = i.resource_required
 
-		sti.buy.connect(func () -> void:
+		sti.buy.connect(func (coint: float, resource: float) -> void:
+			Global.coins -= coint
+			Global.resource -= resource
 			var item:PackedScene = load(i.item)
 			var instanciate: Item = item.instantiate()
 			$items.add_child(instanciate)

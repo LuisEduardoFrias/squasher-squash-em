@@ -238,11 +238,22 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p3ir5"]
 size = Vector2(16, 28)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_l3itg"]
+radius = 16.492422
+
 [node name="enemic_base" type="CharacterBody2D" unique_id=315912967]
 texture_filter = 1
 collision_layer = 4
 motion_mode = 1
 script = ExtResource("1_l3itg")
+live = null
+category = null
+type_enemic = null
+damage = null
+exp_ = null
+speed = null
+item_provability = null
+item_bettwen_provability = null
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=867703496]
@@ -272,4 +283,10 @@ shape = SubResource("RectangleShape2D_p3ir5")
 debug_color = Color(0.45257473, 0.5954905, 5.7756904e-07, 0.42)
 metadata/_edit_lock_ = true
 
+[node name="mouse_hurt" type="Area2D" parent="." unique_id=1702429610]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouse_hurt" unique_id=351665588]
+shape = SubResource("CircleShape2D_l3itg")
+
 [connection signal="body_entered" from="hit" to="." method="_on_hit_body_entered"]
+[connection signal="body_exited" from="hit" to="." method="_on_hit_body_exited"]

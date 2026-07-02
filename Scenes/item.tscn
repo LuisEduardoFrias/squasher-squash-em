@@ -1,13 +1,114 @@
 [gd_scene format=3 uid="uid://cjoulbigfvn3a"]
 
 [ext_resource type="Script" uid="uid://ddeqk580geft4" path="res://Scenes/item.gd" id="1_ys0gr"]
-[ext_resource type="Texture2D" uid="uid://dep8vqla3yyfa" path="res://Textures/items.png" id="2_76mu4"]
+[ext_resource type="Texture2D" uid="uid://bnbdviycwqvdj" path="res://Textures/ítems y botones.png" id="3_u06aw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u06aw"]
-atlas = ExtResource("2_76mu4")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76mu4"]
+size = Vector2(11, 48)
 
-[node name="item" type="Node2D" unique_id=1028060968]
+[sub_resource type="SpriteFrames" id="SpriteFrames_btogu"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"destroyed",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_renmp"]
+atlas = ExtResource("3_u06aw")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66iod"]
+atlas = ExtResource("3_u06aw")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76mu4"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 0.4)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u06aw"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 12
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lak8q"]
+size = Vector2(20, 41)
+
+[node name="item" type="StaticBody2D" unique_id=934773547]
+texture_filter = 1
+collision_mask = 4
 script = ExtResource("1_ys0gr")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=848655065]
-texture = SubResource("AtlasTexture_u06aw")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=664725684]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_76mu4")
+metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=362280601]
+sprite_frames = SubResource("SpriteFrames_btogu")
+animation = &"attack"
+autoplay = "default"
+metadata/_edit_lock_ = true
+
+[node name="item_control" type="Node2D" parent="." unique_id=148888041]
+metadata/_edit_lock_ = true
+
+[node name="place" type="TextureButton" parent="item_control" unique_id=800076793]
+offset_left = -30.0
+offset_top = -30.0
+offset_right = -6.0
+offset_bottom = -6.0
+texture_normal = SubResource("AtlasTexture_renmp")
+texture_pressed = SubResource("AtlasTexture_66iod")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1514794177]
+offset_left = -27.0
+offset_top = -34.0
+offset_right = 23.0
+offset_bottom = -30.0
+theme_override_styles/background = SubResource("StyleBoxFlat_76mu4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_u06aw")
+step = 1.0
+value = 100.0
+show_percentage = false
+metadata/_edit_lock_ = true
+
+[node name="hit" type="Area2D" parent="." unique_id=2017249764]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit" unique_id=1119925536]
+shape = SubResource("RectangleShape2D_lak8q")
+debug_color = Color(0.99834853, 0.032291595, 3.85046e-07, 0.42)
+
+[connection signal="pressed" from="item_control/place" to="." method="_on_texture_button_pressed"]
+[connection signal="body_entered" from="hit" to="." method="_on_hit_body_entered"]

@@ -14,12 +14,9 @@ func _ready():
 
 
 func _input(event: InputEvent) -> void:
+	#print("mouse: ",event)
 	if event is InputEventMouseMotion or event is InputEventScreenDrag or event is InputEventScreenTouch:
 		area_point_cursor.global_position = event.position
-
-	# Si es un toque (pulsación), lo consumimos para que no se duplique abajo
-	#if event is InputEventScreenTouch:
-		#get_viewport().set_input_as_handled()
 
 
 func chance(index: Mousers = Mousers.RESET) -> void:

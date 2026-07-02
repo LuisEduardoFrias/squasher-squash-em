@@ -1,7 +1,12 @@
 class_name StoreItem extends Panel
 
-signal buy
-signal update
+signal buy(coint: float, resource: float)
+signal update(coint: float, resource: float)
+
+@onready var btn_buy: TextureButton = $btn_buy
+@onready var btn_update: TextureButton = $btn_update
+@onready var lab_buy: Label = $btn_buy/Label
+@onready var lab_update: Label = $btn_update/Label
 
 @export var item_img: Rect2 = Rect2(132.0, 223.0, 36.0, 38.0):
 	set(val):
@@ -48,9 +53,22 @@ func _ready() -> void:
 	$image.texture = $image.texture.duplicate()
 
 
-func _on_btn_buy_pressed() -> void: buy.emit()
+func _process(_delta: float) -> void:
+	pass
+	'''if Global.coins >= item_coin_buy and Global.resource >= item_resource_buy:
+		btn_buy.disabled = false
+	else:
+		btn_buy.disabled = true
 
-func _on_btn_updaye_pressed() -> void: update.emit()
+	if Global.coins >= item_coin_update and Global.resource >= item_resource_update:
+		btn_update.disabled = false
+	else:
+		btn_update.disabled = true'''
+
+
+func _on_btn_buy_pressed() -> void: buy.emit(item_coin_buy, item_resource_buy)
+
+func _on_btn_updaye_pressed() -> void: update.emit(item_coin_update, item_resource_update)
 
 
 func _on_btn_buy_mouse_entered() -> void:
@@ -59,3 +77,17 @@ func _on_btn_buy_mouse_entered() -> void:
 
 func _on_btn_buy_mouse_exited() -> void:
 	Mouse.chance(Mouse.Mousers.RESET)
+
+
+func _on_btn_buy_draw() -> void:
+	if not btn_buy.disabled:
+		lab_buy.modulate.a = 1.0
+	elif btn_buy.disabled:
+		lab_buy.modulate.a = 0.5
+
+
+func _on_btn_update_draw() -> void:
+	if not btn_update.disabled:
+		lab_update.modulate.a = 1.0
+	elif btn_buy.disabled:
+		lab_update.modulate.a = 0.5

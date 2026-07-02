@@ -101,9 +101,7 @@ stretch_shrink = 2
 mouse_target = true
 metadata/_edit_lock_ = true
 
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=1660116302]
-unique_name_in_owner = true
-handle_input_locally = false
+[node name="SubViewport2" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=1790005394]
 snap_2d_transforms_to_pixel = true
 snap_2d_vertices_to_pixel = true
 canvas_item_default_texture_filter = 0
@@ -111,9 +109,8 @@ audio_listener_enable_2d = true
 physics_object_picking = true
 size = Vector2i(640, 360)
 size_2d_override_stretch = true
-render_target_update_mode = 4
 
-[node name="Node2D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1259802523 instance=ExtResource("1_j2wod")]
+[node name="Node2D" parent="CanvasLayer/SubViewportContainer/SubViewport2" unique_id=1259802523 instance=ExtResource("1_j2wod")]
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1095507362]
 

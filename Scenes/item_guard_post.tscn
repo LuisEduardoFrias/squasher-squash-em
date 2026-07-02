@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://duaohnyvcl6nt"]
+
+[ext_resource type="PackedScene" uid="uid://cjoulbigfvn3a" path="res://Scenes/item.tscn" id="1_xb6md"]
+[ext_resource type="Texture2D" uid="uid://dep8vqla3yyfa" path="res://Textures/items.png" id="2_3bbmn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xb6md"]
+size = Vector2(21, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0kn3"]
+atlas = ExtResource("2_3bbmn")
+region = Rect2(0, 112, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2kxj"]
+atlas = ExtResource("2_3bbmn")
+region = Rect2(0, 160, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqben"]
+atlas = ExtResource("2_3bbmn")
+region = Rect2(0, 112, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0igpj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0kn3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2kxj")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqben")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"destroyed",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bbmn"]
+size = Vector2(7, 31)
+
+[node name="item_guard post" unique_id=934773547 instance=ExtResource("1_xb6md")]
+damage = 40.0
+max_live = 400.0
+live = 400.0
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=664725684]
+position = Vector2(-3.5, 2)
+shape = SubResource("RectangleShape2D_xb6md")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=362280601]
+sprite_frames = SubResource("SpriteFrames_0igpj")
+
+[node name="CollisionShape2D" parent="hit" parent_id_path=PackedInt32Array(2017249764) index="0" unique_id=1119925536]
+position = Vector2(11, 1.5)
+shape = SubResource("RectangleShape2D_3bbmn")

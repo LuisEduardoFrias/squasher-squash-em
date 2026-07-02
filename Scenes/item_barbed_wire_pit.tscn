@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://fdgfwoh08vj1"]
+
+[ext_resource type="PackedScene" uid="uid://cjoulbigfvn3a" path="res://Scenes/item.tscn" id="1_j44k7"]
+[ext_resource type="Texture2D" uid="uid://dep8vqla3yyfa" path="res://Textures/items.png" id="2_pstig"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j44k7"]
+size = Vector2(11, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwbje"]
+atlas = ExtResource("2_pstig")
+region = Rect2(48, 48, 16, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aerjc"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwbje")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"destroyed",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pstig"]
+size = Vector2(7, 43)
+
+[node name="item_barbed-wire pit" unique_id=934773547 instance=ExtResource("1_j44k7")]
+is_attacable = false
+damage = 100.0
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=664725684]
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_j44k7")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=362280601]
+sprite_frames = SubResource("SpriteFrames_aerjc")
+animation = &"default"
+
+[node name="ProgressBar" parent="." index="3" unique_id=1514794177]
+offset_top = -34.0
+offset_bottom = -30.0
+
+[node name="CollisionShape2D" parent="hit" parent_id_path=PackedInt32Array(2017249764) index="0" unique_id=1119925536]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_pstig")

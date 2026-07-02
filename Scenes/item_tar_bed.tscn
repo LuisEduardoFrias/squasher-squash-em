@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dh4yxr1wned0i"]
+
+[ext_resource type="PackedScene" uid="uid://cjoulbigfvn3a" path="res://Scenes/item.tscn" id="1_1geby"]
+[ext_resource type="Texture2D" uid="uid://dep8vqla3yyfa" path="res://Textures/items.png" id="2_tdwmf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1geby"]
+size = Vector2(14, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pry76"]
+atlas = ExtResource("2_tdwmf")
+region = Rect2(64, 48, 16, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5l4as"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pry76")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"destroyed",
+"speed": 5.0
+}]
+
+[node name="item_tar_bed" unique_id=934773547 instance=ExtResource("1_1geby")]
+is_attacable = false
+damage = 0.0
+attacks = false
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=664725684]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_1geby")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=362280601]
+sprite_frames = SubResource("SpriteFrames_5l4as")
+animation = &"default"
+
+[node name="ProgressBar" parent="." index="3" unique_id=1514794177]
+offset_left = -26.0
+offset_top = -30.0
+offset_right = 24.0
+offset_bottom = -26.0
+
+[node name="CollisionShape2D" parent="hit" parent_id_path=PackedInt32Array(2017249764) index="0" unique_id=1119925536]
+shape = null

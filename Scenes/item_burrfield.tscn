@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bgp00ryv1e12b"]
+
+[ext_resource type="PackedScene" uid="uid://cjoulbigfvn3a" path="res://Scenes/item.tscn" id="1_17qgp"]
+[ext_resource type="Texture2D" uid="uid://dep8vqla3yyfa" path="res://Textures/items.png" id="2_ilt71"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_17qgp"]
+size = Vector2(16, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1juh"]
+atlas = ExtResource("2_ilt71")
+region = Rect2(64, 0, 16, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qc1cf"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1juh")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"destroyed",
+"speed": 5.0
+}]
+
+[node name="item_burrfield" unique_id=934773547 instance=ExtResource("1_17qgp")]
+is_attacable = false
+damage = 18.0
+attacks = false
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=664725684]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_17qgp")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=362280601]
+sprite_frames = SubResource("SpriteFrames_qc1cf")
+animation = &"default"
+
+[node name="ProgressBar" parent="." index="3" unique_id=1514794177]
+offset_left = -26.0
+offset_top = -34.0
+offset_right = 24.0
+offset_bottom = -30.0
+
+[node name="CollisionShape2D" parent="hit" parent_id_path=PackedInt32Array(2017249764) index="0" unique_id=1119925536]
+shape = null

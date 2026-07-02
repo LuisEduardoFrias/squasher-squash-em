@@ -27,15 +27,15 @@ region_enabled = true
 region_rect = Rect2(144, 0, 128, 368)
 metadata/_edit_lock_ = true
 
-[node name="get_coin" type="Area2D" parent="." unique_id=1518056645]
+[node name="get_item_drop" type="Area2D" parent="." unique_id=1518056645]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="get_coin" unique_id=1220840337]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="get_item_drop" unique_id=1220840337]
 shape = SubResource("CircleShape2D_d155t")
 debug_color = Color(0.9832291, 0, 0.35496783, 0.42)
 metadata/_edit_lock_ = true
 
-[connection signal="body_entered" from="get_coin" to="." method="_on_get_coin_body_entered"]
+[connection signal="body_entered" from="get_item_drop" to="." method="_on_get_coin_body_entered"]
