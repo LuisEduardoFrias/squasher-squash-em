@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cjoulbigfvn3a" path="res://Scenes/item.tscn" id="1_yge10"]
 [ext_resource type="Texture2D" uid="uid://dep8vqla3yyfa" path="res://Textures/items.png" id="2_i47vw"]
+[ext_resource type="Script" uid="uid://drx0shbgqvt1w" path="res://Scenes/item_watchtower.gd" id="2_uhfnc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yge10"]
 size = Vector2(30, 30)
@@ -9,6 +10,10 @@ size = Vector2(30, 30)
 [sub_resource type="AtlasTexture" id="AtlasTexture_uhfnc"]
 atlas = ExtResource("2_i47vw")
 region = Rect2(0, 0, 32, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i47vw"]
+atlas = ExtResource("2_i47vw")
+region = Rect2(128, 0, 32, 112)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k53lp"]
 animations = [{
@@ -25,7 +30,10 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i47vw")
+}],
 "loop": true,
 "name": &"destroyed",
 "speed": 5.0
@@ -35,9 +43,7 @@ animations = [{
 radius = 100.0
 
 [node name="item_watchtower" unique_id=934773547 instance=ExtResource("1_yge10")]
-damage = 50.0
-attacks = false
-max_live = 400.0
+script = ExtResource("2_uhfnc")
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=664725684]
 position = Vector2(0, 11)
@@ -45,7 +51,7 @@ shape = SubResource("RectangleShape2D_yge10")
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=362280601]
 sprite_frames = SubResource("SpriteFrames_k53lp")
-animation = &"default"
+animation = &"destroyed"
 offset = Vector2(0, -30)
 
 [node name="ProgressBar" parent="." index="3" unique_id=1514794177]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dh4yxr1wned0i"]
 
 [ext_resource type="PackedScene" uid="uid://cjoulbigfvn3a" path="res://Scenes/item.tscn" id="1_1geby"]
+[ext_resource type="Script" uid="uid://bmfmnyk26otk4" path="res://Scenes/item_tar_bed.gd" id="2_pry76"]
 [ext_resource type="Texture2D" uid="uid://dep8vqla3yyfa" path="res://Textures/items.png" id="2_tdwmf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1geby"]
@@ -10,8 +11,17 @@ size = Vector2(14, 42)
 atlas = ExtResource("2_tdwmf")
 region = Rect2(64, 48, 16, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdwmf"]
+atlas = ExtResource("2_tdwmf")
+region = Rect2(112, 48, 16, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_5l4as"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pry76")
@@ -20,24 +30,36 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdwmf")
+}],
 "loop": true,
 "name": &"destroyed",
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdwmf"]
+size = Vector2(14, 42)
+
 [node name="item_tar_bed" unique_id=934773547 instance=ExtResource("1_1geby")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("2_pry76")
+deceleration = 5.0
+reduced_life = 25.0
 is_attacable = false
 damage = 0.0
-attacks = false
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=664725684]
 position = Vector2(0, 0)
 shape = SubResource("RectangleShape2D_1geby")
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=362280601]
+position = Vector2(0, -22)
 sprite_frames = SubResource("SpriteFrames_5l4as")
 animation = &"default"
+offset = Vector2(0, 22)
 
 [node name="ProgressBar" parent="." index="3" unique_id=1514794177]
 offset_left = -26.0
@@ -46,4 +68,4 @@ offset_right = 24.0
 offset_bottom = -26.0
 
 [node name="CollisionShape2D" parent="hit" parent_id_path=PackedInt32Array(2017249764) index="0" unique_id=1119925536]
-shape = null
+shape = SubResource("RectangleShape2D_tdwmf")

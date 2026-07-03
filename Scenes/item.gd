@@ -3,20 +3,26 @@ class_name Item extends StaticBody2D
 @onready var progres: ProgressBar = $ProgressBar
 @onready var col: CollisionShape2D = $CollisionShape2D
 
-
+@export var lv: int = 0
 @export var is_attacable: bool = true
-@export var damage: float = 12.5
+@export var damage: float = 12.5:
+	set(val):
+		if lv == 0: damage = val
+		else: damage = (val + ((val * 0.12) * lv))
 @export var attacks: bool = true
 @export var max_live: float = 100.0:
 	set(val):
 		max_live = val
 		if not is_node_ready(): await ready
-		progres.max_value = val
+		if lv == 0: progres.max_value = val
+		else: progres.max_value = (val + ((val * 0.12) * lv))
+
 @export var live: float = 100.0:
 	set(val):
 		live = val
 		if not is_node_ready(): await ready
-		progres.value = val
+		if lv == 0: progres.max_value = val
+		else: progres.max_value = (val + ((val * 0.12) * lv))
 		if val <= 0:
 			destroyed()
 
@@ -51,6 +57,7 @@ func _process(delta: float) -> void:
 func attack() -> void:
 	$AnimatedSprite2D.play(&"attack")
 
+	await get_tree().create_timer(1.0).timeout
 	is_attacking = true
 
 	for enem in enemics:
@@ -59,6 +66,7 @@ func attack() -> void:
 				enem.hurt(damage)
 
 	await get_tree().create_timer(1.0).timeout
+	$AnimatedSprite2D.play(&"default")
 	is_attacking = false
 
 

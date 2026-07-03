@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://fdgfwoh08vj1"]
 
 [ext_resource type="PackedScene" uid="uid://cjoulbigfvn3a" path="res://Scenes/item.tscn" id="1_j44k7"]
+[ext_resource type="Script" uid="uid://dj4d5l61p30xk" path="res://Scenes/item_barbed_wire_pit.gd" id="2_hwbje"]
 [ext_resource type="Texture2D" uid="uid://dep8vqla3yyfa" path="res://Textures/items.png" id="2_pstig"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j44k7"]
@@ -9,6 +10,10 @@ size = Vector2(11, 44)
 [sub_resource type="AtlasTexture" id="AtlasTexture_hwbje"]
 atlas = ExtResource("2_pstig")
 region = Rect2(48, 48, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pstig"]
+atlas = ExtResource("2_pstig")
+region = Rect2(96, 48, 16, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aerjc"]
 animations = [{
@@ -25,31 +30,49 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pstig")
+}],
 "loop": true,
 "name": &"destroyed",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pstig"]
-size = Vector2(7, 43)
+size = Vector2(8, 41)
 
 [node name="item_barbed-wire pit" unique_id=934773547 instance=ExtResource("1_j44k7")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("2_hwbje")
+reduced_life = 50.0
 is_attacable = false
 damage = 100.0
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=664725684]
-position = Vector2(0.5, 2)
+position = Vector2(0, -24)
 shape = SubResource("RectangleShape2D_j44k7")
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=362280601]
+y_sort_enabled = true
+position = Vector2(0, -46)
 sprite_frames = SubResource("SpriteFrames_aerjc")
 animation = &"default"
+offset = Vector2(0, 22)
+
+[node name="item_control" parent="." index="2" unique_id=148888041]
+position = Vector2(0, -24)
 
 [node name="ProgressBar" parent="." index="3" unique_id=1514794177]
-offset_top = -34.0
-offset_bottom = -30.0
+offset_left = -24.0
+offset_top = -59.0
+offset_right = 26.0
+offset_bottom = -55.0
 
-[node name="CollisionShape2D" parent="hit" parent_id_path=PackedInt32Array(2017249764) index="0" unique_id=1119925536]
-position = Vector2(-0.5, 2.5)
+[node name="hit" parent="." index="4" unique_id=2017249764]
+position = Vector2(0, -24)
+
+[node name="CollisionShape2D" parent="hit" index="0" unique_id=1119925536]
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_pstig")

@@ -34,7 +34,6 @@ func _process(_delta: float) -> void:
 
 
 func _input(event: InputEvent) -> void:
-	print("map: ", event)
 	if (event is InputEventMouseButton or event is InputEventScreenTouch) and event.pressed:
 		var rect_size = col.shape.size
 		var zona_interactiva = Rect2(col.global_position - rect_size / 2, rect_size)
@@ -54,7 +53,7 @@ func _show_store_item() -> void:
 		sti.item_img = i.img
 		sti.item_name = i.name
 		sti.item_lv = i.lv
-
+		sti.item_id = i.item_id
 		sti.item_coin_buy = i.coins_pay
 		sti.item_resource_buy = i.resource_pay
 
@@ -63,12 +62,29 @@ func _show_store_item() -> void:
 		sti.item_coin_update = i.coins_required
 		sti.item_resource_update = i.resource_required
 
-		sti.buy.connect(func (coint: float, resource: float) -> void:
+		sti.buy.connect(func (coint: float, resource: float, lv: int) -> void:
 			Global.coins -= coint
 			Global.resource -= resource
 			var item:PackedScene = load(i.item)
 			var instanciate: Item = item.instantiate()
+			instanciate.lv = lv
 			$items.add_child(instanciate)
+		)
+
+		sti.update.connect(func (coint: float, resource: float, item_id: int) -> void:
+			Global.coins -= coint
+			Global.resource -= resource
+
+			var index: int = 0
+
+			for item in Global.store:
+				if item.item_id == item_id:
+					Global.store[index].lv += 1
+					break
+				index += 1
+
+			if index != -1:
+				%store_item_container.get_child(index).level_up()
 		)
 
 		%store_item_container.add_child(sti)

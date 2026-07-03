@@ -14,8 +14,13 @@ class_name Enemic extends CharacterBody2D
 enum State { WALL, ATTACK }
 enum Type_enemic { ENEMIC_1, ENEMIC_2, ENEMIC_3, ENEMIC_4 }
 
-var state: State = State.WALL
+var enable_recurring_damage: bool = false
+var time_recurring_damage: float = -1.0
+var timer_count_recurring_damage: float = 0.0
+var is_recurring_damage: bool = false
+var damage_recurring_damage: float = 3.0
 
+var state: State = State.WALL
 var is_destroyed: bool = false
 var enemic = null
 var is_attacking: bool = false
@@ -30,13 +35,27 @@ func _ready() -> void:
 	anim.play(enemic_str(type_enemic) + "_move")
 
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if state == State.WALL:
 		velocity = Vector2(-1.0, 0.0) * speed
 		move_and_slide()
 	elif state == State.ATTACK:
 		if not is_attacking:
 			execute_attack_cycle()
+
+	if enable_recurring_damage and not is_recurring_damage:
+		is_recurring_damage = true
+		internal_hurt(damage_recurring_damage)
+		await get_tree().create_timer(3.0).timeout
+		if live <= 0:
+			queue_free()
+		is_recurring_damage = false
+
+	if enable_recurring_damage and time_recurring_damage != -1.0:
+		timer_count_recurring_damage += delta
+		if timer_count_recurring_damage >=  time_recurring_damage:
+			enable_recurring_damage = false
+
 
 
 func execute_attack_cycle() -> void:
@@ -121,7 +140,7 @@ func arrow_hurt() -> void:
 		pass
 
 
-func hurt_(damage_:float) -> void:
+func internal_hurt(damage_:float) -> void:
 	is_hurt = true
 	intermittency()
 	live -= damage_
@@ -142,7 +161,7 @@ func hurt_(damage_:float) -> void:
 
 
 func hurt(damage_:float) -> void:
-	hurt_(damage_)
+	await internal_hurt(damage_)
 
 	if live <= 0:
 		queue_free()
@@ -158,11 +177,9 @@ func _input(event: InputEvent) -> void:
 		var mouse_pos = get_global_mouse_position()
 
 		if centro_circulo.distance_to(mouse_pos) <= radio:
-
-			print(event)
 			Mouse.chance(Mouse.Mousers.PURGE)
 			await get_tree().create_timer(0.2).timeout
-			hurt_(25.0)
+			await internal_hurt(25.0)
 			Mouse.chance(Mouse.Mousers.RESET)
 
 			if live <= 0:
@@ -173,7 +190,7 @@ func get_drop_item() -> Node2D:
 	var ps: PackedScene
 	var range_index: int = 0
 
-	if item_bettwen_provability <= randf():
+	if item_bettwen_provability >= randf():
 		ps = load("res://Scenes/coint.tscn")
 		range_index = randi_range(0, 4)
 	else:

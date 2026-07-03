@@ -19,6 +19,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if not is_creating_enemies:
+		pass
 		create_enemic()
 
 
@@ -41,7 +42,7 @@ func create_enemic() -> void:
 
 
 func enemic_index() -> int:
-	return randi() % 3
+	return randi() % 4
 
 
 func paused(on: bool ) -> void:

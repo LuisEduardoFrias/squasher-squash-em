@@ -112,3 +112,4 @@ debug_color = Color(0.99834853, 0.032291595, 3.85046e-07, 0.42)
 
 [connection signal="pressed" from="item_control/place" to="." method="_on_texture_button_pressed"]
 [connection signal="body_entered" from="hit" to="." method="_on_hit_body_entered"]
+[connection signal="body_exited" from="hit" to="." method="_on_hit_body_exited"]

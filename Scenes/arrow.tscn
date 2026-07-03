@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://djt4xchkx2jea"]
+
+[ext_resource type="Script" uid="uid://dsqeg8i5m77nh" path="res://Scenes/arrow.gd" id="1_2u0bd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i47vw"]
+radius = 2.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uhfnc"]
+radius = 5.0
+
+[sub_resource type="Gradient" id="Gradient_2u0bd"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h5x2m"]
+gradient = SubResource("Gradient_2u0bd")
+width = 15
+height = 15
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="arrow" type="CharacterBody2D" unique_id=955046142]
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
+script = ExtResource("1_2u0bd")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1222252539]
+shape = SubResource("CircleShape2D_i47vw")
+metadata/_edit_lock_ = true
+
+[node name="hit" type="Area2D" parent="." unique_id=1593316741]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit" unique_id=249147140]
+visible = false
+shape = SubResource("CircleShape2D_uhfnc")
+debug_color = Color(0.9882353, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1334098283]
+texture = SubResource("GradientTexture2D_h5x2m")
+
+[connection signal="body_entered" from="hit" to="." method="_on_hit_body_entered"]

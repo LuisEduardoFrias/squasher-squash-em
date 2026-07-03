@@ -435,7 +435,7 @@ fill_from = Vector2(0, 0.5)
 fill_to = Vector2(1, 0.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q0mm3"]
-size = Vector2(321.5, 351)
+size = Vector2(833.5, 351)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q3n4"]
 bg_color = Color(0.1, 0.1, 0.1, 0.6)
@@ -554,7 +554,7 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_click" unique_id=2078230506]
 z_index = 10
-position = Vector2(259.75, 0)
+position = Vector2(3.75, 0)
 shape = SubResource("RectangleShape2D_q0mm3")
 debug_color = Color(1, 1, 0, 0.16862746)
 metadata/_edit_lock_ = true
