@@ -24,6 +24,7 @@ func _ready() -> void:
 
 	hidden_menu(0)
 	_show_store_item()
+	_show_skill_item()
 
 
 func _process(_delta: float) -> void:
@@ -88,6 +89,25 @@ func _show_store_item() -> void:
 		)
 
 		%store_item_container.add_child(sti)
+
+
+func _show_skill_item() -> void:
+	for item in Global.skills:
+		var sti: SkillItem = skills_item.instantiate()
+		sti.skill_img = item.img
+		sti.skill_name = item.name
+		sti.skill_ph_required = item.ph
+		sti.skill_lv_required = item.lv_required
+		sti.skill_coin_required = item.coin
+		sti.skill_resource_required = item.resource
+		sti.skill_lv = item.lv
+
+		sti.update.connect(func () -> void:
+			pass
+		)
+
+		%skill_item_container.add_child(sti)
+
 
 
 func _on_texture_button_pressed() -> void:

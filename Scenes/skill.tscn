@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://dbcx2vhqqevi2"]
+
+[ext_resource type="Script" uid="uid://bkr5oxtkq2fre" path="res://Scenes/skill.gd" id="1_86x3w"]
+[ext_resource type="Texture2D" uid="uid://4nfp45eyf4yj" path="res://Textures/hub.png" id="1_uc8rf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ie368"]
+atlas = ExtResource("1_uc8rf")
+region = Rect2(132, 171, 118, 69)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uc8rf"]
+load_path = "res://.godot/imported/hub.png-c2ca5ede1d80f8de3a696b7b1b5e298a.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7jjh"]
+atlas = SubResource("CompressedTexture2D_uc8rf")
+region = Rect2(168, 261, 36, 38)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86x3w"]
+draw_center = false
+border_width_top = 2
+border_color = Color(0.1882353, 0.08235294, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uc8rf"]
+atlas = ExtResource("1_uc8rf")
+region = Rect2(132, 240, 13, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86x3w"]
+atlas = ExtResource("1_uc8rf")
+region = Rect2(145, 240, 13, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfkld"]
+atlas = ExtResource("1_uc8rf")
+region = Rect2(158, 240, 13, 13)
+
+[node name="Panel" type="Panel" unique_id=1930211085]
+self_modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+custom_minimum_size = Vector2(220, 144)
+offset_right = 220.0
+offset_bottom = 122.0
+script = ExtResource("1_86x3w")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1983333249]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_ie368")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="img" type="TextureRect" parent="." unique_id=2081382632]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 82.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_w7jjh")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="name" type="Label" parent="." unique_id=798979175]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 14.0
+offset_right = 137.0
+offset_bottom = 37.0
+theme_override_font_sizes/font_size = 12
+text = "Name"
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="." unique_id=2080719380]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 37.0
+offset_right = 205.0
+offset_bottom = 39.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_86x3w")
+metadata/_edit_lock_ = true
+
+[node name="Label2" type="Label" parent="." unique_id=4208157]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 105.0
+offset_right = 89.0
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 12
+text = "Update"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="requireds" type="Label" parent="." unique_id=515780702]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 44.0
+offset_right = 196.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0.6203417, 0.6203417, 0.6203417, 1)
+theme_override_font_sizes/font_size = 10
+text = "Requirements"
+metadata/_edit_lock_ = true
+
+[node name="ph_required" type="Label" parent="." unique_id=855739430]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 57.0
+offset_right = 196.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 12
+text = "Ph: 2"
+metadata/_edit_lock_ = true
+
+[node name="lv_required" type="Label" parent="." unique_id=1227253510]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 72.0
+offset_right = 139.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 12
+text = "Lv: 2"
+metadata/_edit_lock_ = true
+
+[node name="coin" type="Label" parent="." unique_id=1499010039]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 99.0
+offset_right = 124.0
+offset_bottom = 122.0
+text = "0"
+metadata/_edit_lock_ = true
+
+[node name="resource" type="Label" parent="." unique_id=226603075]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 99.0
+offset_right = 188.0
+offset_bottom = 122.0
+text = "0"
+metadata/_edit_lock_ = true
+
+[node name="update" type="TextureButton" parent="." unique_id=13965022]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 105.0
+offset_right = 36.0
+offset_bottom = 127.0
+disabled = true
+texture_normal = SubResource("AtlasTexture_uc8rf")
+texture_pressed = SubResource("AtlasTexture_86x3w")
+texture_disabled = SubResource("AtlasTexture_lfkld")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="lv" type="Label" parent="." unique_id=764570136]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 82.0
+offset_right = 24.0
+offset_bottom = 105.0
+theme_override_font_sizes/font_size = 12
+text = "Lv: 0"
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="update" to="." method="_on_update_pressed"]

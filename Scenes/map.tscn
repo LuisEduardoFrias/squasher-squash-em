@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://du221lnrj145e" path="res://Scenes/enemi_generator.tscn" id="3_myvm1"]
 [ext_resource type="Shader" uid="uid://cnmeduwq1sosa" path="res://Shaders/light_movements.gdshader" id="6_np2xp"]
 [ext_resource type="Texture2D" uid="uid://4nfp45eyf4yj" path="res://Textures/hub.png" id="6_w7jjh"]
+[ext_resource type="PackedScene" uid="uid://dbcx2vhqqevi2" path="res://Scenes/skill.tscn" id="8_6q3n4"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ci6au"]
 a = Vector2(1280, 0)
@@ -470,10 +471,6 @@ region = Rect2(132, 27, 102, 27)
 atlas = ExtResource("6_w7jjh")
 region = Rect2(0, 0, 132, 362)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ie368"]
-atlas = ExtResource("6_w7jjh")
-region = Rect2(132, 172, 118, 52)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_6q3n4"]
 atlas = ExtResource("6_w7jjh")
 region = Rect2(234, 0, 27, 27)
@@ -487,8 +484,10 @@ y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_q0mm3")
 store_item = ExtResource("2_w7jjh")
+skills_item = ExtResource("8_6q3n4")
 metadata/_edit_vertical_guides_ = [864.0]
 metadata/_edit_lock_ = true
+metadata/_edit_horizontal_guides_ = [134.0]
 
 [node name="land boundary marker" type="StaticBody2D" parent="." unique_id=1045644286]
 metadata/_edit_lock_ = true
@@ -589,13 +588,12 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_6q3n4")
 theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_4c2oa")
 theme_override_styles/tab_selected = SubResource("StyleBoxFlat_olcgw")
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 tab_0/icon = SubResource("AtlasTexture_dlo4w")
 tab_1/icon = SubResource("AtlasTexture_q6lx1")
 metadata/_edit_lock_ = true
 
 [node name="skills" type="TextureRect" parent="PanelContainer/TabContainer" unique_id=762051997]
-visible = false
 z_index = 5
 layout_mode = 2
 mouse_filter = 0
@@ -691,7 +689,8 @@ scroll_hint_mode = 1
 tile_scroll_hint = true
 metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/TabContainer/skills/VBoxContainer/MarginContainer2/ScrollContainer" unique_id=837534644]
+[node name="skill_item_container" type="VBoxContainer" parent="PanelContainer/TabContainer/skills/VBoxContainer/MarginContainer2/ScrollContainer" unique_id=837534644]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 362)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -699,129 +698,8 @@ mouse_filter = 0
 accessibility_name = "."
 metadata/_edit_lock_ = true
 
-[node name="Panel" type="Panel" parent="PanelContainer/TabContainer/skills/VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer" unique_id=1426921500]
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 104)
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/TabContainer/skills/VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer/Panel" unique_id=1046547670]
-custom_minimum_size = Vector2(200, 100)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_ie368")
-expand_mode = 1
-
-[node name="TextureRect2" type="TextureRect" parent="PanelContainer/TabContainer/skills/VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer/Panel" unique_id=110392141]
-custom_minimum_size = Vector2(200, 100)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
-
-[node name="Panel2" type="Panel" parent="PanelContainer/TabContainer/skills/VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer" unique_id=1925525316]
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 104)
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/TabContainer/skills/VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer/Panel2" unique_id=432227640]
-custom_minimum_size = Vector2(200, 100)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_ie368")
-expand_mode = 1
-
-[node name="Panel3" type="Panel" parent="PanelContainer/TabContainer/skills/VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer" unique_id=1352017557]
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 104)
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/TabContainer/skills/VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer/Panel3" unique_id=517336493]
-custom_minimum_size = Vector2(200, 100)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_ie368")
-expand_mode = 1
-
-[node name="Panel4" type="Panel" parent="PanelContainer/TabContainer/skills/VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer" unique_id=1686437051]
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 104)
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/TabContainer/skills/VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer/Panel4" unique_id=1025708231]
-custom_minimum_size = Vector2(200, 100)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_ie368")
-expand_mode = 1
-
-[node name="Panel5" type="Panel" parent="PanelContainer/TabContainer/skills/VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer" unique_id=267909143]
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 104)
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/TabContainer/skills/VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer/Panel5" unique_id=1373987539]
-custom_minimum_size = Vector2(200, 100)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_ie368")
-expand_mode = 1
-
-[node name="Panel6" type="Panel" parent="PanelContainer/TabContainer/skills/VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer" unique_id=1240928197]
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 104)
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/TabContainer/skills/VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer/Panel6" unique_id=1217002183]
-custom_minimum_size = Vector2(200, 100)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_ie368")
-expand_mode = 1
-
-[node name="Panel7" type="Panel" parent="PanelContainer/TabContainer/skills/VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer" unique_id=913027446]
-self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(0, 104)
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/TabContainer/skills/VBoxContainer/MarginContainer2/ScrollContainer/VBoxContainer/Panel7" unique_id=2058322774]
-custom_minimum_size = Vector2(200, 100)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_ie368")
-expand_mode = 1
-
 [node name="store" type="TextureRect" parent="PanelContainer/TabContainer" unique_id=1060524280]
+visible = false
 z_index = 5
 layout_mode = 2
 mouse_filter = 0

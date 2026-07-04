@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bkmy83nygkukv"]
+
+[ext_resource type="Shader" uid="uid://bl0op0k00po8m" path="res://Scenes/skill_activated.gdshader" id="1_knwxp"]
+[ext_resource type="Script" uid="uid://be1rsdkw556u8" path="res://Scenes/skill_activated.gd" id="2_nfc4u"]
+[ext_resource type="Texture2D" uid="uid://4nfp45eyf4yj" path="res://Textures/hub.png" id="3_nfc4u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i0tbe"]
+shader = ExtResource("1_knwxp")
+shader_parameter/progreso = 1.0
+
+[node name="skill_activated" type="TextureRect" unique_id=1318385429]
+texture_filter = 1
+material = SubResource("ShaderMaterial_i0tbe")
+custom_minimum_size = Vector2(100, 100)
+expand_mode = 1
+script = ExtResource("2_nfc4u")
+atlas_completo = ExtResource("3_nfc4u")
+img = Rect2(168, 261, 36, 38)
+metadata/_edit_lock_ = true
+
+[node name="btn" type="Button" parent="." unique_id=1067285327]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

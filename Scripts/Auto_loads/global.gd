@@ -19,31 +19,34 @@ var resource: float = 0
 
 var skills = [
 	{
-		"imagen": Rect2i(),
-		"name":"+$+$",
-		"level": 0,
-		"level_required": 2,
-		"ph_required": 1,
-		"coins_required": 100,
-		"resource_required": 10
+		"img": Rect2(168.0, 261.0, 36.0, 38.0),
+		"name": "fist of fire",
+		"ph": 2,
+		"lv_required": 1,
+		"coin": 80,
+		"resource": 100,
+		"lv": 1,
+		"timer": 50
 	},
 	{
-		"imagen": Rect2i(),
-		"name":"+$+$",
-		"level": 0,
-		"level_required": 2,
-		"ph_required": 1,
-		"coins_required": 100,
-		"resource_required": 10
+		"img": Rect2(132.0, 261.0, 36.0, 38.0),
+		"name": "lightning storm",
+		"ph": 3,
+		"lv_required": 2,
+		"coin": 95,
+		"resource": 125,
+		"lv": 1,
+		"timer": 25
 	},
 	{
-		"imagen": Rect2i(),
-		"name":"+$+$",
-		"level": 0,
-		"level_required": 2,
-		"ph_required": 1,
-		"coins_required": 100,
-		"resource_required": 10
+		"img": Rect2(132.0, 299.0, 36.0, 38.0),
+		"name": "cloud of toxic gas",
+		"ph": 2,
+		"lv_required": 1,
+		"coin": 60,
+		"resource": 90,
+		"lv": 1,
+		"timer": 8
 	}
 ]
 

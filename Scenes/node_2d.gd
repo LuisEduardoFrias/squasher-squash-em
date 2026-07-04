@@ -7,8 +7,8 @@ extends Node2D
 @onready var coins: Label = $CanvasLayer2/Panel/MarginContainer/Panel/HBoxContainer/HBoxContainer3/coins
 @onready var resource: Label = $CanvasLayer2/Panel/MarginContainer/Panel/HBoxContainer/HBoxContainer4/resours
 
-@export var store_item: PackedScene
-@export var skills_item: PackedScene
+@export var skills_activated: PackedScene
+
 
 
 func _ready() -> void:
@@ -25,6 +25,8 @@ func _ready() -> void:
 	$CanvasLayer/SubViewportContainer/SubViewport2.gui_disable_input = false
 	$CanvasLayer/SubViewportContainer/SubViewport2.handle_input_locally = true
 
+	show_skills()
+
 
 func _process(_delta: float) -> void:
 	live.value = Global.player_live
@@ -33,3 +35,16 @@ func _process(_delta: float) -> void:
 	l_exp.text = "EXP: %s %%" % round(Global.player_exp / 5.0)
 	coins.text = str(Global.coins)
 	resource.text = str(Global.resource)
+
+
+func show_skills() -> void:
+	for item in Global.skills:
+		var sti: SkillActivated = skills_activated.instantiate()
+		sti.img = item.img
+		sti.time_cooldown = item.timer
+
+		sti.activate.connect(func () -> void:
+			pass
+		)
+
+		%skill_container.add_child(sti)
